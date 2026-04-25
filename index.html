@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>mini site</title>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+        color: #222;
+        text-align: center;
+        padding-top: 80px;
+    }
+
+    .card {
+        background: rgba(255,255,255,0.6);
+        padding: 30px;
+        margin: auto;
+        width: 320px;
+        border-radius: 20px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+
+    button {
+        padding: 12px 22px;
+        margin: 10px;
+        border: none;
+        border-radius: 12px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: 0.3s;
+    }
+
+    button:hover {
+        transform: scale(1.1);
+    }
+
+    .yes { background: #4caf50; color: white; }
+    .no { background: #f44336; color: white; }
+
+    .big {
+        transform: scale(2);
+    }
+
+    .hidden {
+        display: none;
+    }
+</style>
+</head>
+
+<body>
+
+<!-- PAGE 1 -->
+<div id="page1" class="card">
+    <h1>Hi pute</h1>
+    <p>pute</p>
+    <button onclick="nextPage()">pouta</button>
+</div>
+
+<!-- PAGE 2 -->
+<div id="page2" class="card hidden">
+    <h2>wsh toi cv?</h2>
+    <button onclick="goNext()">no nik mv</button>
+    <button onclick="goNext()">lvdmm que cv</button>
+</div>
+
+<!-- PAGE 3 -->
+<div id="page3" class="card hidden">
+    <h2>You still mad ?</h2>
+
+    <button class="oui go ta3ti" onclick="yesAction()">oui go ta3ti</button>
+    <button class="bah no wsh ew" id="noBtn" onclick="growNo()">bah no wsh ew</button>
+</div>
+
+<!-- PAGE 4 -->
+<div id="page4" class="card hidden">
+    <h1>Hallelujah ✨</h1>
+</div>
+
+<script>
+
+function nextPage() {
+    document.getElementById("page1").classList.add("hidden");
+    document.getElementById("page2").classList.remove("hidden");
+}
+
+function goNext() {
+    document.getElementById("page2").classList.add("hidden");
+    document.getElementById("page3").classList.remove("hidden");
+}
+
+/* YES → Hallelujah */
+function yesAction() {
+    document.getElementById("page3").classList.add("hidden");
+    document.getElementById("page4").classList.remove("hidden");
+}
+
+/* NO → bouton grandit */
+function growNo() {
+    let btn = document.getElementById("noBtn");
+    btn.classList.toggle("big");
+}
+
+</script>
+
+</body>
+</html>
